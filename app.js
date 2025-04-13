@@ -3,13 +3,20 @@ const app = express();
 
 const PORT = process.env.PORT || 8080; // 🔧 Corrected the casing of PORT
 const mongoose = require('mongoose');
-const cors = require('cors');
+
 const path = require("path");
 
 require('./models/model');
 require('./models/post');
 
-app.use(cors());
+const cors = require("cors");
+app.use(cors({
+    origin: "https://vercel.com/project-insta/insta-clone", // replace with your actual frontend URL
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+}));
+
+
 app.use(express.json());
 
 app.use("/api", require("./routes/Auth"));
