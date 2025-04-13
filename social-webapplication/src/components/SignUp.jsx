@@ -28,11 +28,11 @@ export default function SignUp() {
             return notifyA("Invalid Email");
         }
         else if (!strongPasswordRegex.test(password)) {
-         notifyA("Password must contain at least eight character,including at least on number and one includes both lower and upper case letter and special character for example # @ !")
-            return 
+            notifyA("Password must contain at least eight character,including at least on number and one includes both lower and upper case letter and special character for example # @ !")
+            return
         }
 
-        fetch("/signup", {
+        fetch("/api/signup", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
