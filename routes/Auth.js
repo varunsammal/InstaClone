@@ -8,7 +8,7 @@ const { Jwt_secret } = require("../keys");
 const requireLogin = require("../middlewares/requireLogin");
 
 
-router.post("/api/signup", (req, res) => {
+router.post("/signup", (req, res) => {
     const { name, userName, email, password } = req.body;
 
 
@@ -44,7 +44,7 @@ router.post("/api/signup", (req, res) => {
 })
 
 
-router.post("/api/signin", (req, res) => {
+router.post("/signin", (req, res) => {
     const { email, password } = req.body;
 
     if (!email || !password) {

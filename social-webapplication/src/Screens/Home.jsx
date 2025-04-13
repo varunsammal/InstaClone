@@ -28,7 +28,7 @@ export default function Home() {
     setUserId(user._id);
 
     // Fetch all posts
-    fetch("/api/allposts", {
+    fetch("/allposts", {
       headers: {
         Authorization: "Bearer " + token
       },
@@ -55,7 +55,7 @@ export default function Home() {
   }
 
   const likePost = (id) => {
-    fetch("/api/like", {
+    fetch("/like", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default function Home() {
   };
 
   const unlikePost = (id) => {
-    fetch("/api/unlike", {
+    fetch("/unlike", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ export default function Home() {
   const makeComment = (text, id) => {
     if (!text.trim()) return
 
-    fetch("/api/comment", {
+    fetch("/comment", {
       method: "put",
       headers: {
         "Content-Type": "application/json",

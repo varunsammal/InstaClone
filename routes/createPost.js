@@ -5,7 +5,7 @@ const requireLogin = require("../middlewares/requireLogin");
 const POST = mongoose.model("POST")
 
 
-router.get("/api/allposts", requireLogin, (req, res) => {
+router.get("/allposts", requireLogin, (req, res) => {
     POST.find()
         .populate("postedBy", "_id name Photo") // detailed information about specific field
         .sort("-createdAt") // sort posted according to the timestamp (-ve mean in descending order)
@@ -15,7 +15,7 @@ router.get("/api/allposts", requireLogin, (req, res) => {
 })
 
 //ROute
-router.post("/api/createPost", requireLogin, (req, res) => {
+router.post("/createPost", requireLogin, (req, res) => {
 
 
 
@@ -41,7 +41,7 @@ router.post("/api/createPost", requireLogin, (req, res) => {
 
 
 //put is for update purpose
-router.get("/api/myposts", requireLogin, async (req, res) => {
+router.get("/myposts", requireLogin, async (req, res) => {
     try {
         const myposts = await POST.find({ postedBy: req.user._id })
             .populate("postedBy", "_id name Photo")
@@ -65,7 +65,7 @@ router.get("/api/myposts", requireLogin, async (req, res) => {
     }
 });
 
-router.put("/api/like", requireLogin, async (req, res) => {
+router.put("/like", requireLogin, async (req, res) => {
     try {
         const result = await POST.findByIdAndUpdate(
             req.body.postId,
@@ -81,7 +81,7 @@ router.put("/api/like", requireLogin, async (req, res) => {
 
 
 
-router.put("/api/unlike", requireLogin, async (req, res) => {
+router.put("/unlike", requireLogin, async (req, res) => {
     try {
         const result = await POST.findByIdAndUpdate(
             req.body.postId,
@@ -96,7 +96,7 @@ router.put("/api/unlike", requireLogin, async (req, res) => {
 
 
 
-router.put("/api/comment", requireLogin, async (req, res) => {
+router.put("/comment", requireLogin, async (req, res) => {
     try {
         const comment = {
             comment: req.body.text, // text from frontend
@@ -126,7 +126,7 @@ router.put("/api/comment", requireLogin, async (req, res) => {
     }
 });
 
-router.delete("/api/deletePost/:postId", requireLogin, async (req, res) => {
+router.delete("/deletePost/:postId", requireLogin, async (req, res) => {
     try {
         const post = await POST.findById(req.params.postId).populate("postedBy", "_id");
 
@@ -149,7 +149,7 @@ router.delete("/api/deletePost/:postId", requireLogin, async (req, res) => {
 
 // to show following post
 
-router.get("/api/myfollowingpost", requireLogin, (req, res) => {
+router.get("/myfollowingpost", requireLogin, (req, res) => {
     POST.find({ postedBy: { $in: req.user.following } })
         .populate("postedBy", "_id name Photo")
         .populate("comments.postedBy", "_id name Photo")

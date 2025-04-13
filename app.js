@@ -10,18 +10,23 @@ require('./models/model');
 require('./models/post');
 
 const cors = require("cors");
-app.use(cors({
-    origin: "https://vercel.com/project-insta/insta-clone", // replace with your actual frontend URL
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization"
-}));
+// app.use(cors({
+//     origin: "https://vercel.com/project-insta/insta-clone", // replace with your actual frontend URL
+//     methods: "GET,POST,PUT,DELETE",
+//     allowedHeaders: "Content-Type,Authorization"
+// }));
 
+app.use(cors());
 
 app.use(express.json());
 
-app.use("/api", require("./routes/Auth"));
-app.use("/api", require("./routes/createPost"));
-app.use("/api", require("./routes/user"));
+// app.use("/api", require("./routes/Auth"));
+// app.use("/api", require("./routes/createPost"));
+// app.use("/api", require("./routes/user"));
+
+app.use(require("./routes/Auth"));
+app.use(require("./routes/createPost"));
+app.use(require("./routes/user"));
 
 const { mongoURL } = require('./keys');
 mongoose.connect(mongoURL);
@@ -36,9 +41,6 @@ mongoose.connection.on("error", () => {
 app.use(express.static(path.join(__dirname, "./social-webapplication/build")));
 
 app.get("*", (req, res) => {
-    if (req.path.startsWith("/api")) {
-        return res.status(404).send("API route not found");
-    }
 
     res.sendFile(
         path.join(__dirname, "./social-webapplication/build/index.html"),

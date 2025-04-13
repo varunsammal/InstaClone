@@ -40,7 +40,7 @@ export default function Profile() {
     }
 
     useEffect(() => {
-        fetch(`/api/user/${JSON.parse(localStorage.getItem("user"))._id}`, {
+        fetch(`/user/${JSON.parse(localStorage.getItem("user"))._id}`, {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("jwt")
             }
@@ -59,7 +59,7 @@ export default function Profile() {
         const currentUser = JSON.parse(localStorage.getItem("user"));
         const action = isFollowing ? 'unfollow' : 'follow';
 
-        fetch(`/api/${action}`, {
+        fetch(`/${action}`, {
             method: 'PUT',
             headers: {
                 "Content-Type": "application/json",
