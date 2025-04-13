@@ -1,0 +1,45 @@
+.signIn {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-image: url('https://imgs.search.brave.com/eEr9ZeB1HavuA3OX6rvJl8rd4DbmfYyLtowChLYkOJ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9jb2xvci1ncmFk/aWVudC1ibHVyLWJh/Y2tncm91bmRfMzQz/NzMyLTgwNzEuanBn/P3NlbXQ9YWlzX2h5/YnJpZA');
+    background-size: cover;
+    flex: 1;
+}
+
+.loginForm {
+    background-color: #ffffffa6;
+    padding: 30px;
+    border: 1px solid rgb(129, 121, 121);
+    border-radius: 1px;
+}
+
+.signUpLogo {
+    width: 200px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px 0px;
+}
+
+
+#submit-btn {
+    background-color: #1773EA;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+}
+
+
+.loginForm2 {
+    background-color: #ffffffa6;
+    padding: 28px;
+    margin-top: 5px;
+    border: 1px solid rgb(129, 121, 121);
+    border-radius: 1px;
+}

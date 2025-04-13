@@ -1,0 +1,112 @@
+.centered {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+
+.darkBg {
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal {
+    width: 350px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    padding: 20px;
+    animation: popUp 0.3s ease-out;
+}
+
+@keyframes popUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+}
+
+.modalContent {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #444;
+}
+
+.modalActions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actionContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.logOutBtn,
+.cancelBtn {
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.logOutBtn {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.logOutBtn:hover {
+    background-color: #e60000;
+}
+
+.cancelBtn {
+    background-color: #eee;
+    color: #333;
+}
+
+.cancelBtn:hover {
+    background-color: #ddd;
+}
