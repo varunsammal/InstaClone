@@ -15,7 +15,7 @@ export default function ProfilePic({ changeprofile }) {
     };
 
     const postPic = () => {
-        fetch("https://instaclone-backend.up.railway.app/uploadProfilePic", {
+        fetch("/uploadProfilePic", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

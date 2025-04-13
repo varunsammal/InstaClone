@@ -27,7 +27,7 @@ export default function SignIn() {
     //     return 
     // }
 
-    fetch("https://instaclone-backend.up.railway.app/signin", {
+    fetch("/signin", {
       method: "post",
       headers: {
         "Content-Type": "application/json"

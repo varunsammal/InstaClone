@@ -13,7 +13,7 @@ export default function UserProfile() {
 
     // to follow user
     const followUser = (userId) => {
-        fetch("https://instaclone-backend.up.railway.app/follow", {
+        fetch("/follow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function UserProfile() {
 
 
     const unfollowUser = (userId) => {
-        fetch("https://instaclone-backend.up.railway.app/unfollow", {
+        fetch("/unfollow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +54,7 @@ export default function UserProfile() {
 
     useEffect(() => {
 
-        fetch(`https://instaclone-backend.up.railway.app/user/${userid}`, {
+        fetch(`/user/${userid}`, {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("jwt")
             }
