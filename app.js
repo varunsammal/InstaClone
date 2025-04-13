@@ -9,8 +9,10 @@ const path = require("path");
 require('./models/model');
 require('./models/post');
 
+
 const cors = require('cors');
-app.use(cors()); // Allows cross-origin requests
+app.use(cors({ origin: 'https://instaclone-production-4111.up.railway.app' })); // Adjust with your frontend URL
+
 
 app.use(express.json());
 

@@ -19,7 +19,7 @@ export default function CreatePost() {
     useEffect(() => {
         //saving post to mongodb
         if (url) {
-            fetch("/createPost", {
+            fetch("https://instaclone-production-4111.up.railway.app/createPost", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",
