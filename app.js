@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-const PORT = process.env.PORT || 8082; // 🔧 Corrected the casing of PORT
+const PORT = process.env.PORT || 8080; // 🔧 Corrected the casing of PORT
 const mongoose = require('mongoose');
 
 const path = require("path");
