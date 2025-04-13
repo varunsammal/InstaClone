@@ -1,1 +1,3 @@
 node_modules
+social-webapplication/node_modules/
+.env
