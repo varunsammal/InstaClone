@@ -9,14 +9,8 @@ const path = require("path");
 require('./models/model');
 require('./models/post');
 
-const cors = require("cors");
-// app.use(cors({
-//     origin: "https://vercel.com/project-insta/insta-clone", // replace with your actual frontend URL
-//     methods: "GET,POST,PUT,DELETE",
-//     allowedHeaders: "Content-Type,Authorization"
-// }));
-
-app.use(cors());
+const cors = require('cors');
+app.use(cors()); // Allows cross-origin requests
 
 app.use(express.json());
 
