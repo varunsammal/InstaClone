@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../css/CreatePost.css'
 
+
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,7 +19,7 @@ export default function CreatePost() {
     useEffect(() => {
         //saving post to mongodb
         if (url) {
-            fetch("/createPost", {
+            fetch("https://instaclone-backend.up.railway.app/createPost", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",

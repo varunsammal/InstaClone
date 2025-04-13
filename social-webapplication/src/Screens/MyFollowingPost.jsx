@@ -26,7 +26,7 @@ export default function MyFollowingPost() {
 
         setUserId(user._id);
 
-        fetch("/myfollowingpost", {
+        fetch("https://instaclone-backend.up.railway.app/myfollowingpost", {
             headers: {
                 Authorization: "Bearer " + token
             },
@@ -45,7 +45,7 @@ export default function MyFollowingPost() {
     };
 
     const likePost = (id) => {
-        fetch("/like", {
+        fetch("https://instaclone-backend.up.railway.app/like", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@ export default function MyFollowingPost() {
     };
 
     const unlikePost = (id) => {
-        fetch("/unlike", {
+        fetch("https://instaclone-backend.up.railway.app/unlike", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",
@@ -79,7 +79,7 @@ export default function MyFollowingPost() {
     const makeComment = (text, id) => {
         if (!text.trim()) return;
 
-        fetch("/comment", {
+        fetch("https://instaclone-backend.up.railway.app/comment", {
             method: "put",
             headers: {
                 "Content-Type": "application/json",

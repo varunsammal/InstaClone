@@ -55,7 +55,7 @@ export default function Home() {
   }
 
   const likePost = (id) => {
-    fetch("/like", {
+    fetch("https://instaclone-backend.up.railway.app/like", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -71,7 +71,7 @@ export default function Home() {
   };
 
   const unlikePost = (id) => {
-    fetch("/unlike", {
+    fetch("https://instaclone-backend.up.railway.app/unlike", {
       method: "put",
       headers: {
         "Content-Type": "application/json",
@@ -89,7 +89,7 @@ export default function Home() {
   const makeComment = (text, id) => {
     if (!text.trim()) return
 
-    fetch("/comment", {
+    fetch("https://instaclone-backend.up.railway.app/comment", {
       method: "put",
       headers: {
         "Content-Type": "application/json",

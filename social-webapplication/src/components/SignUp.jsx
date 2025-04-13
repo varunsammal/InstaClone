@@ -32,7 +32,7 @@ export default function SignUp() {
             return
         }
 
-        fetch("/api/signup", {
+        fetch("https://instaclone-backend.up.railway.app/signup", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
