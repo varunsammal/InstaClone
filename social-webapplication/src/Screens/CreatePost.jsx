@@ -18,7 +18,7 @@ export default function CreatePost() {
     useEffect(() => {
         //saving post to mongodb
         if (url) {
-            fetch("/createPost", {
+            fetch("/api/createPost", {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",

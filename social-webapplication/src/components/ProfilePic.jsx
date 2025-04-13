@@ -15,7 +15,7 @@ export default function ProfilePic({ changeprofile }) {
     };
 
     const postPic = () => {
-        fetch("/uploadProfilePic", {
+        fetch("/api/uploadProfilePic", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

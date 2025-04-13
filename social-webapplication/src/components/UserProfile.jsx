@@ -13,7 +13,7 @@ export default function UserProfile() {
 
     // to follow user
     const followUser = (userId) => {
-        fetch("/follow", {
+        fetch("/api/follow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -33,7 +33,7 @@ export default function UserProfile() {
 
 
     const unfollowUser = (userId) => {
-        fetch("/unfollow", {
+        fetch("/api/unfollow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +54,7 @@ export default function UserProfile() {
 
     useEffect(() => {
 
-        fetch(`/user/${userid}`, {
+        fetch(`/api/user/${userid}`, {
             headers: {
                 Authorization: "Bearer " + localStorage.getItem("jwt")
             }
