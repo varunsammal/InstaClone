@@ -8,7 +8,7 @@ const USER = mongoose.model("USER");
 
 
 // to get user profile
-router.get("/user/:id", async (req, res) => {
+router.get("/api/user/:id", async (req, res) => {
     const { id } = req.params;
 
     // Validate ObjectId first
@@ -37,7 +37,7 @@ router.get("/user/:id", async (req, res) => {
 });
 
 //to follow user
-router.put("/follow", requireLogin, async (req, res) => {
+router.put("/api/follow", requireLogin, async (req, res) => {
     try {
         const { followId } = req.body;
 
@@ -72,7 +72,7 @@ router.put("/follow", requireLogin, async (req, res) => {
 });
 
 
-router.put("/unfollow", requireLogin, async (req, res) => {
+router.put("/api/unfollow", requireLogin, async (req, res) => {
     try {
         const { followId } = req.body;
 
@@ -109,7 +109,7 @@ router.put("/unfollow", requireLogin, async (req, res) => {
 
 // to upload profile pic
 // to upload profile pic
-router.put("/uploadProfilePic", requireLogin, async (req, res) => {
+router.put("/api/uploadProfilePic", requireLogin, async (req, res) => {
     try {
         const updatedUser = await USER.findByIdAndUpdate(
             req.user._id,
